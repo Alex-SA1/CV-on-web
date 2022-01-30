@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Curriculum Vitae - Login - (Samoila Alexandru)</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    
+</head>
+<style>
+
+body{
+background-color: rgb(48, 41, 39);
+}
+
+
+
+.links a
+{
+text-decoration: none;
+color: rgb(163, 118, 105);
+}
+
+.container{
+text-align: center;
+min-height: 60vh;
+}
+.title{
+margin-top: 10vh; 
+}
+.title h1
+{
+color: rgb(238, 211, 204);
+}
+.links{
+margin-top: 20vh;
+}
+
+.upper{
+min-height: 15vh;
+background-color: rgb(238, 211, 204);
+}
+.lower{
+min-height: 15vh;
+background-color: rgb(238, 211, 204);
+}
+</style>
+<body>
+
+     <div class="upper">
+     </div>
+
+     <div class="container">
+     <div class="title">
+        <h1>Welcome! Here you can see my online CV!</h1>
+     </div>
+     <div class="links">
+            <h3><a th:href="@{/list-users}">List All Users</a></h3>
+            <h3><a th:href="@{/register}">Register</a></h3>
+            <h3><a th:href="@{/login}">Login</a></h3>
+     </div>
+        
+        
+    </div> 
+    
+    <div class="lower">
+     </div>
+     
+</body>
+</html>
