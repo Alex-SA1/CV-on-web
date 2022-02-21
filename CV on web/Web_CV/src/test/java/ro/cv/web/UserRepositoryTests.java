@@ -2,6 +2,7 @@ package ro.cv.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -18,6 +19,7 @@ public class UserRepositoryTests {
      
     @Autowired
     private UserRepository repo;
+    
     
     @Autowired
     private TestEntityManager entityManager;
@@ -47,6 +49,10 @@ public class UserRepositoryTests {
     	
     	assertThat(user).isNotNull();
     }
+    
+    
+    
+    
     
     
     
