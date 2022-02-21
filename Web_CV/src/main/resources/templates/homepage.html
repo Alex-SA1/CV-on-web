@@ -1,13 +1,908 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8"> 
+    <meta charset="ISO-8859-1">
+    <meta content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Homepage</title>
 <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+  rel="stylesheet">
 
 </head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: crimson;
+  border-radius: 5rem;
+}
+
+body {
+  background: #25274D;
+  padding-bottom: 6.5rem;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 6vw;
+  color: #EDF5E1;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.heading span {
+  text-transform: uppercase;
+  color: crimson;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: crimson;
+  padding: .7rem;
+  font-size: 1.7rem;
+  color: #fff;
+  
+}
+
+.btn i {
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 1.7rem;
+  text-align: center;
+  background: #fff;
+  color: crimson;
+  border-radius: 50%;
+  margin-left: 1rem;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.btn:hover i {
+  margin-left: 2rem;
+}
+
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 4rem;
+  min-height: calc(100vh - 6.5rem);
+}
+
+
+.home .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.home .content h3 {
+  color: #fff;
+  font-size: 4rem;
+  padding-bottom: .5rem;
+}
+
+.home .content span {
+  font-size: 3rem;
+  color: crimson;
+  padding: .5rem 0;
+  display: block;
+}
+
+.home .content p {
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.about .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .row .info-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.about .row .info-container h1 {
+  font-size: 3rem;
+  color: #8EE4AF;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+
+.about .row .info-container .box-container {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .row .info-container .box-container .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+}
+
+.about .row .info-container .box-container .box h3 {
+  font-size: 1.7rem;
+  color: #fff;
+  padding: 1rem 1rem;
+  font-weight: normal;
+}
+
+.about .row .info-container .box-container .box h3 span {
+  color: #aaa;
+  font-weight: darker;
+}
+
+.about .row .count-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .row .count-container .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  padding: 3rem 4rem;
+  border-radius: .5rem;
+  background: #242582;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.about .row .count-container .box h3 {
+  font-size: 5rem;
+  color: crimson;
+}
+
+.about .row .count-container .box p {
+  font-size: 2rem;
+  color: #aaa;
+}
+
+.skills .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.skills .box-container .box {
+  padding: 2rem;
+  text-align: center;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  border-radius: .5rem;
+  background: #242582;
+}
+
+.skills .box-container .box:hover {
+  background: #EDF5E1;
+}
+
+.skills .box-container .box:hover h3 {
+  color: #0d0d0d;
+}
+
+.skills .box-container .box img {
+  height: 7rem;
+  margin-bottom: 1rem;
+}
+
+.skills .box-container .box h3 {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.education .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.education .box-container .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  margin-left: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 3.5rem;
+  padding-bottom: 3rem;
+  border-left: 0.1rem solid #aaa;
+  position: relative;
+}
+
+.education .box-container .box i {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  background: crimson;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: -1rem;
+  left: -2.5rem;
+}
+
+.education .box-container .box span {
+  font-size: 1.7rem;
+  color: #fff;
+  border-radius: 5rem;
+  padding: .5rem 1.5rem;
+  background: #1a1a1a;
+}
+
+.education .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1rem 0;
+  color: #fff;
+  padding-top: 3rem;
+  font-weight: normal;
+}
+
+.education .box-container .box p {
+  font-size: 1.5rem;
+  color: #aaa;
+  line-height: 2;
+}
+
+.portfolio {
+  text-align: center;
+}
+
+.portfolio .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio .box-container .box {
+  height: 30rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio .box-container .box:hover .content {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.portfolio .box-container .box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio .box-container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #1a1a1a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.portfolio .box-container .box .content h3 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.portfolio .box-container .box .content p {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+}
+
+.portfolio .box-container .box .content a {
+  font-size: 2rem;
+  color: crimson;
+}
+
+.portfolio .box-container .box .content a:hover {
+  color: #fff;
+}
+
+
+
+.contact .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact .row .info-container {
+  width: 40rem;
+}
+
+.contact .row .info-container h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
+.contact .row .info-container p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #aaa;
+  padding: 1rem 0;
+}
+
+.contact .row .info-container .box-container {
+  padding: 2rem 0;
+}
+
+.contact .row .info-container .box-container .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.contact .row .info-container .box-container .box i {
+  font-size: 3rem;
+  color: crimson;
+}
+
+.contact .row .info-container .box-container .box h3 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.contact .row .info-container .share a {
+  font-size: 2rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  margin-right: .3rem;
+}
+
+.contact .row .info-container .share a:hover {
+  background: crimson;
+}
+
+.contact .row form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.contact .row form .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact .row form .inputBox input {
+  width: 49%;
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea {
+  border-radius: 5rem;
+  padding: 1.2rem 1.8rem;
+  font-size: 1.6rem;
+  color: #fff;
+  text-transform: none;
+  margin: .7rem 0;
+  background: #242582;
+}
+
+.contact .row form textarea {
+  width: 100%;
+  border-radius: 1rem;
+  resize: none;
+  height: 25rem;
+}
+
+.contact .row form .btn {
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.contact .row form .btn:hover {
+  background: #fff;
+  color: #0d0d0d;
+}
+
+@media (max-width: 1200px) {
+*{
+padding: 0.5rem;
+}
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+*{
+padding: 0.5rem;
+}
+  .heading {
+    font-size: 12vw;
+  }
+  .navbar a i {
+    padding: 0;
+  }
+  .navbar a span {
+    display: none;
+  }
+  .navbar a:hover {
+    padding-bottom: 2rem;
+  }
+  .home {
+    text-align: center;
+    gap: 2rem;
+  }
+  .home .image img {
+    height: 30rem;
+    width: 30rem;
+  }
+  .home .content h3 {
+    font-size: 3rem;
+  }
+  .home .content span {
+    font-size: 2.5rem;
+  }
+  .contact .row form .inputBox input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+*{
+padding: 0.5rem;
+}
+  html {
+    font-size: 50%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
 <body>
 
+<section class="about">
+<div>
+           <form th:action="@{/logout}" method="post">
+             <h3 style="font-size: 3rem;
+                        color: #8EE4AF;
+                        padding-bottom: 1rem;
+                        text-align: center;">
+             Welcome [[${#request.userPrincipal.principal.fullName}]] !
+             </h3>
+             <h3><input type="submit" style="margin-top: 1rem;
+                                             border-radius: 5rem;
+                                             background: crimson;
+                                             padding: 0.7rem;
+                                             font-size: 1.7rem;
+                                             color: #fff;
+                                            " 
+                                             value="Sign Out"/></h3>
+           </form>
+        </div>
+        <br>
+        <hr>
+
+    <h1 class="heading"> About<span> Me </span> </h1>
+
+    <div class="row">
+
+        <div class="info-container">
+
+            <h1>personal info</h1>
+
+            <div class="box-container">
+
+                <div class="box">
+                    <h3> <span>Name : </span> Samoilă Alexandru </h3>
+                    <h3> <span>Age : </span> 16 </h3>
+                    <h3> <span>Email : </span> alexandrusamoila495@gmail.com </h3>
+                    <h3> <span>Address : </span> Piatra-Neamț, Neamț, Războienii de Jos </h3>
+                </div>
+    
+                <div class="box">
+                    <h3> <span>Skills : </span> Competitive Programming</h3>
+                    <h3> <span>Experience : </span> 1.5 years </h3>
+                    <h3> <span>Language : </span> Romanian, English </h3>
+                </div>
+
+            </div>
+
+            <a href="#" class="btn"> Download CV <i class="fa fa-download" aria-hidden="true"></i> </a>
+
+        </div>
+
+        <div class="count-container">
+
+            <div class="box">
+                <h3>850+</h3>
+                <p>Informatics Problems Solved</p>
+            </div>
+
+            <div class="box">
+                <h3>3+</h3>
+                <p>Projects completed</p>
+            </div>
+
+            <div class="box">
+                <h3>10+</h3>
+                <p>People Helped</p>
+            </div>
+
+            <div class="box">
+                <h3>40+</h3>
+                <p>Difficult Informatics Problems</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- skills section starts  -->
+
+<section class="skills">
+
+    <h1 class="heading"> <span>my</span> skills </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="">
+            <h3>C++</h3>
+        </div>
+        <div class="box">
+            <img src="">
+            <h3>HTML</h3>
+        </div>
+        <div class="box">
+            <img src="">
+            <h3>CSS</h3>
+        </div>
+        <div class="box">
+            <img src="">
+            <h3>Java</h3>
+        </div>
+        
+    </div>
+
+</section>
+
+<!-- skills section ends -->
+
+<!-- education section starts  -->
+
+<section class="education">
+
+    <h1 class="heading"> <span>my</span> education </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fa fa-graduation-cap"></i>
+            <span>2012 - 2020</span>
+            <h3>Secondary School</h3>
+            <p>Certification in fundamental notions of real and human matters</p>
+        </div>
+
+        <div class="box">
+            <i class="fa fa-graduation-cap"></i>
+            <span>2020 - 2024</span>
+            <h3>High School</h3>
+            <p>Certification in Web Development and C++ Programming</p>
+        </div>
+
+        <div class="box">
+            <i class="fa fa-graduation-cap"></i>
+            <span>November 2021 - March 2022</span>
+            <h3>Tech Generation - Course</h3>
+            <p>Certification in Java Programming</p>
+        </div>
+<!-- 
+        <div class="box">
+            <i class="fa fa-graduation-cap"></i>
+            <span></span>
+            <h3></h3>
+            <p></p>
+        </div>
+
+        <div class="box">
+            <i class="fa fa-graduation-cap"></i>
+            <span>2019 - 2020</span>
+            <h3></h3>
+            <p></p>
+        </div>
+
+        <div class="box">
+            <i class="fa fa-graduation-cap"></i>
+            <span>2020 - 2021</span>
+            <h3></h3>
+            <p></p>
+        </div>
+-->
+    </div>
+
+</section>
+
+<!-- education section ends -->
+
+<section class="portfolio">
+
+    <h1 class="heading"> <span>my</span> work </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="igalactic.jpg" alt="">
+            <div class="content">
+                <h3>Project "Colegiul Național Intergalactic"</h3>
+                <p>Responsive, optimised for all devices</p>
+                <a href="http://igalactic.ml/">visit website</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="cni1.png" alt="">
+            <div class="content">
+                <h3>High School Annual Magazine</h3>
+                <p>First Edition - Only on Large Screens, Not optimised for Mobile Phones</p>
+                <a href="http://cni.nt.edu.ro/InfoPuls31/index.html">visit website</a>
+            </div>
+        </div>
+       
+        <div class="box">
+            <img src="cni2.jpg" alt="">
+            <div class="content">
+                <h3>High School Annual Magazine</h3>
+                <p>Second Edition - Responsive, Optimised for all devices</p>
+                <a href="http://cni.nt.edu.ro/InfoPuls%202021-2022/index.html">visit website</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="erasmus.png" alt="">
+            <div class="content">
+                <h3>Social Project - Erasmus</h3>
+                <p>Responsive, Optimised for all devices</p>
+                <a href="http://refreshtostayfresh.com/?i=1">visit website</a>
+            </div>
+        </div>
+<!--  
+        <div class="box">
+            <img src="" alt="">
+            <div class="content">
+                <h3></h3>
+                <p></p>
+                <a href="#">read more</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="" alt="">
+            <div class="content">
+                <h3></h3>
+                <p></p>
+                <a href="#">read more</a>
+            </div>
+        </div>
+-->
+    </div>
+
+    
+</section>
+
+<!-- contact section starts  -->
+
+<section class="contact">
+
+<h1 class="heading"> Contact && <span>Message</span> </h1>
+
+<div class="row">
+
+    <div class="info-container">
+
+        <h1>get in touch</h1>
+
+        <p>For public comments: - comment section<br>
+           For private conversations: -email or phone number 
+        </p>
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fa fa-map"></i>
+                <div class="info">
+                    <h3>Address :</h3>
+                    <p>Piatra-Neamț, Neamț, Războienii de Jos </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa fa-envelope"></i>
+                <div class="info">
+                    <h3>Email :</h3>
+                    <p>alexandrusamoila495@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <i class="fa fa-phone"></i>
+                <div class="info">
+                    <h3>Number :</h3>
+                    <p>0743523*9*</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="share">
+            <a href="https://www.facebook.com/profile.php?id=100008530805086" class="fa fa-facebook-f"></a>
+            <a href="https://twitter.com/AlexandruSamo" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/alex_samoila_0409/" class="fa fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/samoil%C4%83-alexandru-76899322b/" class="fa fa-linkedin"></a>
+        </div>
+
+    </div>
+   
+
+<!-- 
+        <div class="inputBox">
+            <input type="text" placeholder="Nickname">
+        </div>
+-->
+       
+         <a th:href="@{/comments}"  class="btn">Show Comment Section</a> 
+        
+        
+        
+    
+
+</div>
+</section>
+
+
+<!-- contact section ends --> 
+
+
+
+
+
+
+<!--
 <div class="container text-center">
         <div>
            <form th:action="@{/logout}" method="post">
@@ -17,7 +912,11 @@
              <input type="submit" value="Sign Out"/>
            </form>
         </div>
-</div>        
+</div>  
 
+-->      
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

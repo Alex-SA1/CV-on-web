@@ -1,52 +1,248 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8"> 
     <meta charset="ISO-8859-1">
-    <title>Curriculum Vitae - Login - (Samoila Alexandru)</title>
+    <meta content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Curriculum Vitae - (Samoila Alexandru)</title>
     <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+  rel="stylesheet">
 </head>
 <style>
 
-body{
-background-color: rgb(48, 41, 39);
-}
-
-
-
-.links a
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+html
 {
-text-decoration: none;
-color: rgb(163, 118, 105);
+    scroll-behavior: smooth;
+}
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  
 }
 
-.container{
-text-align: center;
-min-height: 60vh;
-}
-.title{
-margin-top: 10vh; 
-}
-.title h1
-{
-color: rgb(238, 211, 204);
-}
-.links{
-margin-top: 20vh;
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
 }
 
-.upper{
-min-height: 15vh;
-background-color: rgb(238, 211, 204);
+html::-webkit-scrollbar {
+  width: 1rem;
 }
-.lower{
-min-height: 15vh;
-background-color: rgb(238, 211, 204);
+
+html::-webkit-scrollbar-track {
+  background: #0d0d0d;
 }
+
+html::-webkit-scrollbar-thumb {
+  background: crimson;
+  border-radius: 5rem;
+}
+
+body {
+  background: #25274D;
+  padding-bottom: 6.5rem;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 6vw;
+  color: #AAABB8;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.heading span {
+  text-transform: uppercase;
+  color: crimson;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: crimson;
+  padding: .7rem;
+  font-size: 1.7rem;
+  color: #fff;
+  padding-left: 2rem;
+}
+
+.btn i {
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 1.7rem;
+  text-align: center;
+  background: #fff;
+  color: crimson;
+  border-radius: 50%;
+  margin-left: 1rem;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.btn:hover i {
+  margin-left: 2rem;
+}
+
+
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 4rem;
+  min-height: calc(100vh - 6.5rem);
+}
+
+.home .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+  text-align: center;
+}
+
+.home .image img {
+  height: 50rem;
+  width: 50rem;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.home .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42rem;
+          flex: 1 1 42rem;
+}
+
+.home .content h3 {
+  color: #AAABB8;
+  font-size: 4rem;
+  padding-bottom: .5rem;
+}
+
+.home .content span {
+  font-size: 3rem;
+  color: #8EE4AF;
+  padding: .5rem 0;
+  display: block;
+}
+
+.home .content p {
+  font-size: 1.5rem;
+  color: #EDF5E1;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 12vw;
+  }
+  .navbar a i {
+    padding: 0;
+  }
+  .navbar a span {
+    display: none;
+  }
+  .navbar a:hover {
+    padding-bottom: 2rem;
+  }
+  .home {
+    text-align: center;
+    gap: 2rem;
+  }
+  .home .image img {
+    height: 30rem;
+    width: 30rem;
+  }
+  .home .content h3 {
+    font-size: 3rem;
+  }
+  .home .content span {
+    font-size: 2.5rem;
+  }
+  .contact .row form .inputBox input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+
+
+
+
 </style>
 <body>
 
-     <div class="upper">
+
+
+
+<!--<nav class="navbar">
+    <h3><a th:href="@{/homepage}">Homepage</a></h3> 
+    <h3><a th:href="@{/homepage}">Homepage</a></h3>
+     <h3><a th:href="@{/login}">Login</a></h3>
+</nav> -->
+
+
+<section class="home">
+
+    <div class="image">
+        <img src="eu.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Hi, I'm Samoila Alexandru</h3>
+        <span>Student</span>
+        <p>
+        I'm a student at National College of Computer Science, from Piatra-Neamt.
+        I like programming and due to that fact I study C++, Java, HTML5, CSS and SQL database.
+        </p>
+        <a th:href="@{/homepage}" class="btn"> Homepage <i class="fa fa-user"></i> </a>
+        <a th:href="@{/register}" class="btn"> Register <i class="fa fa-user-plus"></i> </a>
+        <a th:href="@{/login}" class="btn"> Login <i class="fa fa-database"></i> </a>
+    </div>
+
+</section>
+
+
+
+     <!--  <div class="upper">
      </div>
 
      <div class="container">
@@ -54,7 +250,7 @@ background-color: rgb(238, 211, 204);
         <h1>Welcome! Here you can see my online CV!</h1>
      </div>
      <div class="links">
-            <h3><a th:href="@{/list-users}">List All Users</a></h3>
+            <h3><a th:href="@{/homepage}">Homepage</a></h3> 
             <h3><a th:href="@{/register}">Register</a></h3>
             <h3><a th:href="@{/login}">Login</a></h3>
      </div>
@@ -63,7 +259,7 @@ background-color: rgb(238, 211, 204);
     </div> 
     
     <div class="lower">
-     </div>
-     
+     </div> -->
+         
 </body>
 </html>

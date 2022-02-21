@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"> 
+    <meta charset="ISO-8859-1">
+    <meta content="ie=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Comment Section</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	
+</head>
+<style>
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: crimson;
+  border-radius: 5rem;
+}
+body {
+  background: #25274D;
+  padding-bottom: 6.5rem;
+}
+.btn1 {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: crimson;
+  padding: 0.7rem;
+  font-size: 1.7rem;
+  color: #fff;
+  
+  
+}
+.btn2 {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: crimson;
+  padding: 0.7rem;
+  font-size: 1.7rem;
+  color: #fff;
+  margin-left: 45%;
+  
+}
+
+
+.heading {
+  text-align: center;
+  font-size: 6vw;
+  color: #EDF5E1;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.heading span {
+  text-transform: uppercase;
+  color: crimson;
+}
+
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	
+	color:#ffffff;
+}
+
+
+
+
+@media (max-width:1000px) {
+  
+  .btn1{
+  font-size: 1.3rem;
+  }
+  .btn2{
+  font-size: 1.7rem;
+  margin-left: 35%;
+  }
+  .heading{
+  font-size: 12vw;
+  }
+}
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	background-color: crimson;
+	color:#ffffff;
+}
+
+.table tbody tr{
+	background-color: #f5f5f5;
+}
+
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		
+		text-align: left;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+
+</style>
+<body>
+
+	<a th:href = "@{/homepage}" class="btn1"> Back to homepage </a>
+	<h1 class="heading">Comment <span>Section</span></h1>
+	
+	<a th:href = "@{/showNewCommentForm}" class="btn2"> Add Comment </a>
+	<hr>
+	
+	
+    	
+     
+	
+	
+	
+	
+	
+		<table class="table">
+			<thead class="thead">
+				<tr class="tr">
+					<th>Nickname</th>
+					<th>Message</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr th:each="comment: ${listComments}" class="tr"> 
+				    <td th:text="${comment.nickname}" class="td"></td>
+					<td th:text="${comment.message}" class="td"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		
+	
+		
+</body>
+</html>
