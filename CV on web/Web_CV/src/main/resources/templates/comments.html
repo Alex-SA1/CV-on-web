@@ -12,8 +12,9 @@
 	
 </head>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
 * {
-  font-family: 'Poppins', sans-serif;
+  
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -79,6 +80,7 @@ body {
 }
 
 .heading span {
+  
   text-transform: uppercase;
   color: crimson;
 }
@@ -87,6 +89,7 @@ body {
 .table{
 	width: 100%;
 	border-collapse: collapse;
+	font-family: 'Space Mono', monospace;
 }
 
 .table td,.table th{
@@ -176,7 +179,7 @@ body {
 	<a th:href = "@{/homepage}" class="btn1"> Back to homepage </a>
 	<h1 class="heading">Comment <span>Section</span></h1>
 	
-	<a th:href = "@{/showNewCommentForm}" class="btn2"> Add Comment </a>
+	<a th:href = "@{/showNewCommentForm}" class="btn2"> Add a comment </a>
 	<hr>
 	
 	
