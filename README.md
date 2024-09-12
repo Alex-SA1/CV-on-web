@@ -1,2 +1,2 @@
-# CV-on-web
-A personal presentation page (CV)
+Java, spring boot and mysql website
+
